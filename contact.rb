@@ -33,12 +33,16 @@ class Contact
   end
 
   def self.find(id)
+    obj=0 #obj starts at zero
     @@contacts.each do |contact|
-      if contact.id_reader == id  #call on id_reader method to get all id's in the array and check them against id argument  
-         return contact
-      else 
-        return "error"
+      if contact.id_reader == id  #contact.id_reader; here contact block variable calls on the return value of id_reader
+          obj =1                  # if the condition is met, obj becomes 1, if not its zero. being zero triggers the error
+         return contact         
       end
+
+        if obj !=1
+          return  "contact not found"
+        end
     end 
   end
 
@@ -82,15 +86,19 @@ class Contact
     @notes = notes 
   end 
 
-
-
-  # This method should work similarly to the find method above
-  # but it should allow you to search for a contact using attributes other than id
-  # by specifying both the name of the attribute and the value
-  # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
-  def self.find_by
-
-  end
+ 
+  def self.find_by_first_name(first_n) 
+    obj = 0
+    @@contacts.each do |contact|
+      if contact.first_name == first_n    #contact block variable calls on first_name method's return value. 
+        obj =1                            #use of obj is the same as before.
+        return contact
+      end
+        if obj != 1 
+          return "error"
+        end 
+    end 
+  end 
 
   # This method should delete all of the contacts
   def self.delete_all
@@ -113,36 +121,43 @@ diana = Contact.new('diana', 'prince', 'diana@amazon.com') #set default value fo
 #create works 
 bruce = Contact.create('Bruce', 'Wayne', 'bruce@wayne.com', 'dark guy') #saves it by default 
 
-puts clark.inspect
-puts diana.inspect
-puts bruce.inspect
-puts Contact.all.inspect 
+# puts clark.inspect
+# puts diana.inspect
+# puts bruce.inspect
 
 diana.save
 clark.save
+
+puts Contact.all.inspect
+
 # puts
 # puts Contact.all.inspect 
 
-puts 
-#testing readers 
-puts diana.full_name.inspect #print full name works 
-puts diana.email.inspect #print email works 
-puts clark.notes.inspect
-puts diana.notes.inspect
+# puts 
+# #testing readers 
+# puts diana.full_name.inspect #print full name works 
+# puts diana.email.inspect #print email works 
+# puts clark.notes.inspect
+# puts diana.notes.inspect
 
-#testing writers
-clark.first_name=('lark')
-puts clark.inspect
-diana.last_name=('Prince')
-puts diana.inspect
-clark.email=('clark@gmail.com')
-puts clark.inspect
-diana.notes=('royal')
-puts diana.inspect
+# #testing writers
+# clark.first_name=('lark')
+# puts clark.inspect
+# diana.last_name=('Prince')
+# puts diana.inspect
+# clark.email=('clark@gmail.com')
+# puts clark.inspect
+# diana.notes=('royal')
+# puts diana.inspect
 
-puts 
-puts
-puts Contact.find(100)
+# puts 
+# puts
+ puts Contact.find(1005).inspect
+
+ puts 
+ puts 
+
+puts Contact.find_by_first_name("diefgergeaa").inspect
 
 
 
