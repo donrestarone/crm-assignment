@@ -1,3 +1,6 @@
+require_relative 'contact.rb'
+
+
 class CRM
 
   def initialize
@@ -38,3 +41,6 @@ class CRM
 
 
 end
+
+
+
