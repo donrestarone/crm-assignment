@@ -1,4 +1,4 @@
-# require_relative 'contact.rb'
+require_relative 'contact.rb'
 
 
 class CRM
@@ -38,7 +38,16 @@ class CRM
   end
 
   def add_new_contact
-    p "add works"
+    p "enter first name"
+    first_name = gets.chomp 
+    p "enter last name"
+    last_name = gets.chomp 
+    p "enter email"
+    email = gets.chomp 
+    p "enter notes about the person"
+    notes = gets.chomp
+
+    Contact.create(first_name, last_name, email, notes) 
   end
 
   def modify_existing_contact
@@ -46,11 +55,25 @@ class CRM
   end
 
   def delete_contact
-    p "delete works"
+    p "enter the first name"
+      answer = gets.chomp.to_s
+    found_contact = Contact.find_by_first_name(answer)
+    p found_contact
+    found_contact.delete
   end
 
   def display_all_contacts
-    p "display all works"
+    Contact.all.each do |contact|
+    puts "name: #{contact.full_name}"
+    puts "----------------------------------"
+    puts "email: #{contact.email}"
+    puts "----------------------------------"
+    puts "notes: #{contact.notes}"
+    puts "----------------------------------"
+    puts "unique ID: #{contact.id_reader}"
+    puts "----------------------------------"
+    end
+
   end
 
   def search_by_attribute

@@ -68,7 +68,7 @@ class Contact
   end
 
   def update
-    
+
   end
 
   def first_name=(first_name) #writer
@@ -90,15 +90,17 @@ class Contact
  
   def self.find_by_first_name(first_name) 
     obj = 0
+    p first_name
     @@contacts.each do |contact|
+      p contact.first_name
       if contact.first_name == first_name    #contact block variable calls on first_name method's return value. 
-        obj =1                            #use of obj is the same as before.
+        obj = 1                            #use of obj is the same as before.
         return contact
       end
-        if obj != 1 
-          return "error"
-        end 
     end 
+    if obj != 1 
+       return "error"
+     end 
   end 
 
 
@@ -108,16 +110,14 @@ class Contact
   end 
 
 
-  def self.deletebyname(first_n) 
-    @@contacts.delete_if {|contact| contact.first_name == first_n} #when given argument first_n, it goes through the array
-  end                                                              #and invokes built in delete_if method. block variable contact
+
+  def delete
+    @@contacts.delete(self)
+  end 
+  # def deletebyname(first_n) 
+  #   @@contacts.delete_if {|contact| contact.first_name == first_n} #when given argument first_n, it goes through the array
+  # end                                                              #and invokes built in delete_if method. block variable contact
                                                                   #calls on the reader method first_name, and if the argument matches the object, its deleted. 
-
-
-
-
-
-
   
 end
 
@@ -163,7 +163,7 @@ puts diana.inspect
  puts 
  puts 
 
-puts Contact.find_by_first_name("diefgergeaa").inspect
+puts Contact.find_by_first_name("diana").inspect
 
 #Contact.delete_all
 puts
@@ -172,12 +172,18 @@ puts
  puts Contact.all.inspect
 puts
  puts
- Contact.deletebyname("diana")
+ # Contact.deletebyname("diana")
 puts 
 puts
  puts Contact.all.inspect
 
 
+puts clark.id_reader.inspect
+
+clark.delete
+
+
+ puts Contact.all.inspect
 
 
 
