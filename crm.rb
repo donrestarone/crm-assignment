@@ -64,6 +64,8 @@ class CRM
 
   def display_all_contacts
     Contact.all.each do |contact|
+    puts "+++++++++++++++++++++++++++++++++++"
+    puts "+++++++++++++++++++++++++++++++++++"
     puts "name: #{contact.full_name}"
     puts "----------------------------------"
     puts "email: #{contact.email}"
@@ -71,15 +73,33 @@ class CRM
     puts "notes: #{contact.notes}"
     puts "----------------------------------"
     puts "unique ID: #{contact.id_reader}"
-    puts "----------------------------------"
+    puts "+++++++++++++++++++++++++++++++++++"
+    puts "+++++++++++++++++++++++++++++++++++"
     end
 
   end
 
-  def search_by_attribute
-    p "search works"
-  end
+  # def search_by_attribute  #search by first name 
+  #   p "enter first name"
+  #   enter_name = gets.chomp
+  #   Contact.find_by_first_name(enter_name)
+    
+  # end
 
+  def search_by_attribute  #search by first name 
+    p "enter first name"
+    enter_name = gets.chomp
+    contact = Contact.find_by_first_name(enter_name)
+     puts "name: #{contact.full_name}"
+    puts "----------------------------------"
+    puts "email: #{contact.email}"
+    puts "----------------------------------"
+    puts "notes: #{contact.notes}"
+    puts "----------------------------------"
+    puts "unique ID: #{contact.id_reader}"
+   
+    return 
+  end
 
 end
 

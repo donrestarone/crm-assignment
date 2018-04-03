@@ -1,5 +1,3 @@
- 
-
 class Contact
   @@contacts = []
   @@next_id = 1000
@@ -90,11 +88,12 @@ class Contact
  
   def self.find_by_first_name(first_name) 
     obj = 0
-    p first_name
+    # p first_name
     @@contacts.each do |contact|
-      p contact.first_name
+      # p contact.first_name
       if contact.first_name == first_name    #contact block variable calls on first_name method's return value. 
-        obj = 1                            #use of obj is the same as before.
+        obj = 1     
+        #p contact.first_name                       #use of obj is the same as before.
         return contact
       end
     end 
@@ -112,11 +111,9 @@ class Contact
 
 
   def delete
-    @@contacts.delete(self)
+    @@contacts.delete(self) #delete using built in method delete
   end 
-  # def deletebyname(first_n) 
-  #   @@contacts.delete_if {|contact| contact.first_name == first_n} #when given argument first_n, it goes through the array
-  # end                                                              #and invokes built in delete_if method. block variable contact
+                                                              #and invokes built in delete_if method. block variable contact
                                                                   #calls on the reader method first_name, and if the argument matches the object, its deleted. 
   
 end
@@ -147,7 +144,7 @@ puts clark.notes.inspect
 puts diana.notes.inspect
 
 #testing writers
-clark.first_name=('lark')
+clark.first_name=('Clark')
 puts clark.inspect
 diana.last_name=('Prince')
 puts diana.inspect
@@ -180,7 +177,7 @@ puts
 
 puts clark.id_reader.inspect
 
-clark.delete
+#clark.delete
 
 
  puts Contact.all.inspect
