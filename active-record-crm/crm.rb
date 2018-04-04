@@ -27,7 +27,7 @@ class CRM
     puts "[2] Modify an existing contact"
     puts "[3] Delete a contact"
     puts "[4] Display all the contacts"
-    puts "[5] Search by attribute"
+    puts "[5] Search by ID"
     puts "[6] Exit"
     puts "enter a number"
 
@@ -39,9 +39,33 @@ class CRM
       when 2 then modify_existing_contact
       when 3 then delete_contact
       when 4 then display_all_contacts
-      when 5 then search_by_attribute
+      when 5 then search_by_id
     end 
   end
+
+  def add_new_contact 
+    p "enter the first name"
+    first_name = gets.chomp 
+    p "enter the last name "
+    last_name = gets.chomp 
+    p "enter the email"
+    email = gets.chomp 
+    p "enter notes about this contact"
+    note = gets.chomp
+    contact = Contact.create(
+      first_name: first_name, 
+      last_name: last_name, 
+      email: email, 
+      note: note
+      )
+  end 
+
+  def search_by_id 
+    p "enter the id of the contact you want to search for"
+    id = gets.chomp
+    search = Contact.find(id)
+    p search
+  end 
 
 end
 
