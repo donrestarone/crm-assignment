@@ -42,7 +42,7 @@ class CRM
       when 5 then search_by_id
     end 
   end
-
+#add_new contact calls on Contact class which then calls on the create method in the active_record class 
   def add_new_contact 
     p "enter the first name"
     first_name = gets.chomp 
@@ -66,6 +66,23 @@ class CRM
     search = Contact.find(id)
     p search
   end 
+
+  def display_all_contacts
+    all_contacts = Contact.all
+    all_contacts.each do |contact|
+      p "--------------------------"
+      p "name:#{contact.full_name}"
+      
+      p "information:#{contact.rest}"
+      p "--------------------------"
+    end 
+
+
+
+    # p all_contacts
+  end 
+
+
 
 end
 
