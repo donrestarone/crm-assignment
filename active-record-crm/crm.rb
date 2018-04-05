@@ -2,18 +2,13 @@ require_relative 'contact.rb'
 
 
 class CRM
-
-  def initialize
-
-  end
-
   def main_menu
     i = 0
     while i != 1  
       print_main_menu
       user_selected = gets.chomp.to_i
       
-      if user_selected == 0
+      if user_selected == 0 #the input to quit the whileloop.
         i = 1
       end 
 
@@ -69,7 +64,11 @@ class CRM
     p "enter the id of the contact you want to search for"
     id = gets.chomp
     search = Contact.find(id)
-    p search
+     p "--------------------------"
+      p "ID:#{search.id} NAME:#{search.full_name}"
+      
+      p "INFORMATION:#{search.rest}"
+    p "--------------------------"
   end 
 
   def search_by_attribute 
