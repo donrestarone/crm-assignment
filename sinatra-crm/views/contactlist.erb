@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css-reset.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Contact List</title>
+</head>
+	<h1>These Are Your Contacts</h1>
+
+<body>
+	<div class="mainwrapper">
+		<div class="skillwrapper">
+			<nav class="skillbox">
+				<h2>Names</h2>
+				<ul>
+					<% @contact_list.each do |contact| %>
+						<li> <%= contact.full_name %> </li>
+						<li> <%= contact.email %> </li>
+						<li> <%= contact.note %> </li>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
+</body>
+</html>
