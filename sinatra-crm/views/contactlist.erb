@@ -11,18 +11,22 @@
 
 <body>
 	<div class="mainwrapper">
-		<div class="skillwrapper">
-			<nav class="skillbox">
+		<div class="secondwrapper">
+			<nav class="thirdwrapper">
 				<h2>Names</h2>
-				<ul>
-					<% @contact_list.each do |contact| %>
-						<li> <p>name:<%= contact.full_name %>  </p></li>
-						<li> <p>email:<%= contact.email %>  </p></li>
-						<li> <p>notes:<%= contact.note %>  </p></li>
-						 
-					<% end %>
-				</ul>
-			</nav>
-		</div>
+					<ul>
+						<div class="allcontacts">
+						<% @contact_list.each do |contact| %>
+							<div class="contactcard">
+								<li> <p class="contactlabel">name:</p><%= contact.full_name %></li>
+								<li> <p class="contactlabel">email:</p><%= contact.email %></li>
+								<li> <p class="contactlabel">notes:</p><%= contact.note %></li>
+								<li> <p class="contactlabel">ID:</p><%= contact.id %></li>
+							</div>
+						<% end %>
+						</div>
+					</ul>
+				</nav>
+			</div>
 </body>
 </html>
