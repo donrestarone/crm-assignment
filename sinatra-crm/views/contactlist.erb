@@ -16,9 +16,10 @@
 				<h2>Names</h2>
 				<ul>
 					<% @contact_list.each do |contact| %>
-						<li> <%= contact.full_name %> </li>
-						<li> <%= contact.email %> </li>
-						<li> <%= contact.note %> </li>
+						<li> <p>name:<%= contact.full_name %>  </p></li>
+						<li> <p>email:<%= contact.email %>  </p></li>
+						<li> <p>notes:<%= contact.note %>  </p></li>
+						 
 					<% end %>
 				</ul>
 			</nav>
