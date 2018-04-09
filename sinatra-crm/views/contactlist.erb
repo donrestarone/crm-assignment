@@ -1,9 +1,12 @@
-
-
-
-<!-- div for the contact number ribbon -->
-
-
 <div class="contactcount">
-			<h2>There are X contacts</h2>
-		</div>
+	<h2>There are X contacts</h2>
+</div>
+
+<div class="contactwrapper">
+	<% @contact_list.each do |contact| %>
+	<div class="contactribbon">
+		<%= contact.full_name%> (<%= contact.email %>) 
+	</div>
+	<% end %>
+</div>
+
