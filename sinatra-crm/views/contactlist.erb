@@ -1,13 +1,16 @@
 <div class="contactcount">
-	<h2>There are <%=@contact_count %> contacts</h2>
+	<h2 class="countparagraph">
+		There are <span class="number"><%=@contact_count %></span> contacts
+	</h2>
 </div>
 
 <div class="contactwrapper">
 	<% @contact_list.each do |contact| %>
 	<div class="contactribbon">
 		<%= contact.full_name%> (<%= contact.email %>)
-		<div>
+		<div class="contactlink">
 			<a href="#">edit</a>
+			|
 			<a href="#">delete</a>
 		</div> 
 	</div>
