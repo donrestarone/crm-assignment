@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="css-reset.css">
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<title>Contact List</title>
-</head>
-	<h1>These Are Your Contacts</h1>
 
-<body>
-	<div class="mainwrapper">
-		<div class="secondwrapper">
-			<nav class="thirdwrapper">
-				<h2>Names</h2>
-					<ul>
-						<div class="allcontacts">
-						<% @contact_list.each do |contact| %>
-							<div class="contactcard">
-								<li> <p class="contactlabel">name:</p><%= contact.full_name %></li>
-								<li> <p class="contactlabel">email:</p><%= contact.email %></li>
-								<li> <p class="contactlabel">notes:</p><%= contact.note %></li>
-								<li> <p class="contactlabel">ID:</p><%= contact.id %></li>
-							</div>
-						<% end %>
-						</div>
-					</ul>
-				</nav>
-			</div>
-</body>
-</html>
+
+<!-- div for the contact number ribbon -->
+
+
+<div class="contactcount">
+			<h2>There are X contacts</h2>
+		</div>

@@ -5,14 +5,18 @@ get '/' do
   redirect to('/home')
 end
 
-get '/home' do 
-  erb :index
+get '/home' do
+	@current_time = Time.now 
+	erb :index
+
 end 
 
 get '/contactlist' do
-  @contact_list = Contact.all 
-  erb :contactlist
+	@contact_list = Contact.all 
+	erb :contactlist
 end 
+
+# get '/contacts'
 
 # class CRM
 #   def main_menu
