@@ -7,6 +7,7 @@ end
 
 get '/home' do
 	@current_time = Time.now 
+	@title = 'Customer Relations Manager'
 	erb :index
 
 end 
@@ -14,10 +15,12 @@ end
 get '/contactlist' do
 	@contact_list = Contact.all
 	@contact_count = @contact_list.length 
+	@title = 'contact list'
 	erb :contactlist
 end 
 
 get '/about' do
+	@title = 'about'
 	erb :about
 end 
 
