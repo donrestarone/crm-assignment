@@ -12,8 +12,13 @@ get '/home' do
 end 
 
 get '/contactlist' do
-	@contact_list = Contact.all 
+	@contact_list = Contact.all
+	@contact_count = @contact_list.length 
 	erb :contactlist
+end 
+
+get '/about' do
+	erb :about
 end 
 
 # get '/contacts'

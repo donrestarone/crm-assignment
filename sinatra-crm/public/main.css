@@ -3,66 +3,6 @@ html {
 
 	/* Make 1rem = 10px. */
 	font-size: 50%; /* 10px / 16px = 0.625 or 62.5% */
-	background-color: silver;
-}
-
-h1 {
-	text-align: center;
-	font-family: "Helvetica";
-	font-size: 4em;
-	padding: 10px;
-
-}
-
-h2 {
-	font-size: 2em;
-	text-align: center;
-	padding: 2%;
-}
-
-.navigationwrapper {
-	width: 100%;
-	padding: 20px;
-	text-align: center;
-	display: inline-block;
-	font-size: 20px; 
-	 
-}
-
-.navigationbar {
-	text-align: center;
-	
-}
-
-.mainwrapper {
-	width: 100%;
-}
-
-.secondwrapper {
-	text-align: center;
-	margin-left: 45%;
-	display: inline-block;
-	font-size: 1.5em;
-}
-
-.thirdwrapper li {
-	padding: 1%;
-	font-family: "Helvetica";
-}
-
-.contactlabel {
-	font-size: 1.2em;
-	font-weight: 400;
-	text-decoration: underline;
-	padding: 1%;
-	color: pink;
-}
-
-.allcontacts {
-	border:1px solid black;
-}
-
-.contactcard {
-	border:1px solid white;
+	background-color: white;
 }
 

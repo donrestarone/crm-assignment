@@ -13,13 +13,13 @@ class Contact < ActiveRecord::Base
   "#{first_name} #{last_name}"
   end
 
-  def email 
-  	"#{email}"
-  end 
+  # def email_read 
+  # 	"#{email}"
+  # end 
 
- def rest
-  "  #{email} // #{note}"
-  end   
+ # def rest
+ #  "  #{email} // #{note}"
+ #  end   
 
 end
 Contact.auto_upgrade!
