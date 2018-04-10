@@ -7,15 +7,15 @@
 <div class="contactwrapper">
 	<% @sorted_list.each do |contact| %>
 	<div class="contactribbon">
-		<a href="/contacts/<%= contact.id %>">  <%= contact.full_name%> (<%= contact.email %>)</a>
+		<a class="emailcontainer"href="/contacts/<%= contact.id %>">  <%= contact.full_name%> (<%= contact.email %>)</a>
 		<div class="contactlink">
 			<a href="/contacts/<%= contact.id %>/edit">edit</a>
 			|
-			<form action='/contacts/<%= contact.id %>/delete' method='post'>
-	<input type="hidden" name="_method" value="delete">
-			<input type="submit" value="Delete">
-			</form>
 		</div> 
+			<form class="deleteform" action='/contacts/<%= contact.id %>/delete' method='post'>
+	<input type="hidden" name="_method" value="delete">
+			<input class="deletebutton" type="submit" value="Delete">
+			</form>
 	</div>
 	<% end %>
 </div>

@@ -82,7 +82,7 @@ h1 {
 
 .contactcount {
 	background-color: red;
-	padding: 2%;
+	padding: 1%;
 	font-size: 1.5em;
 	font-weight: bold;
 }
@@ -103,14 +103,21 @@ h1 {
 	margin-bottom: 3px;
 	font-weight: bold;
 	font-size: 2em;
+	position: relative;
 }
 .contactlink {
 	margin-top: 8px;
+ 	position: relative;
+ 	display: inline-block;
+
 }
 .contactlink a {
+	float: left;
 	text-decoration: none;
 	font-weight: normal;
 	color: white;
+	display: inline-block;
+
 }
 
 .thankyou {
@@ -127,6 +134,24 @@ h1 {
 
 .number {
 	text-decoration: underline white;
+}
+
+.deletebutton {
+	float: right;
+	display: inline-block;
+	position: fixed;
+	
+}
+
+.emailcontainer {
+	display: block;
+}
+
+.deleteform {
+ 	position: fixed;
+ 	margin-top: 7px;
+ 	display: inline-block;
+
 }
 
 	/*show_contact*/
@@ -152,4 +177,45 @@ h1 {
 	text-align: center;
 }
 
+	/*show contact*/
+
+.fullname {
+	font-size: 4em;
+	text-decoration: underline;
+}
+
+.email {
+	font-size: 2em;
+	color: blue;
+}
+
+.description {
+	background-color: red;
+	/*display: inline-block;*/
+	margin: auto;
+	width: 20%;
+	text-align: center;
+	padding: 3px;
+}
+
+.note {
+	font-size: 1.8em;
+}
+
+	/*about*/
+
+.thankyou {
+	font-size: 3em;
+}
+
+.thankyouparagraph {
+	font-size: 2em;
+}
+
+	/*new contact success*/
+
+.newcontact {
+	font-size: 3em;
+	text-align: center;
+}
 
