@@ -11,7 +11,10 @@
 		<div class="contactlink">
 			<a href="/contacts/<%= contact.id %>/edit">edit</a>
 			|
-			<a href="#">delete</a>
+			<form action='/contacts/<%= contact.id %>/delete' method='post'>
+	<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete">
+			</form>
 		</div> 
 	</div>
 	<% end %>
