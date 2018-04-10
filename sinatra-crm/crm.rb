@@ -24,16 +24,24 @@ get '/about' do
 	erb :about
 end 
 
+get '/contacts/new' do
+	p "hi"
+	@title = 'Create new Contact'
+	erb :new
+end 
+
 get '/contacts/:id' do
 	id = params[:id].to_i
 	@contact = Contact.find_by({id: id})	#@contact gets assigned the result of find_by method in active record. find_by takes hash as argument. 
-	
+	@title = 'contact:'+ @contact.full_name
 	if @contact
 		erb :show_contact
 	else 
 		raise Sinatra::NotFound 
 	end 
 end 
+
+
 
 # get '/contacts'
 
