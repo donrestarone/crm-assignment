@@ -129,5 +129,27 @@ h1 {
 	text-decoration: underline white;
 }
 
+	/*show_contact*/
+
+.fullname {
+	text-align: center; 
+	color: black;
+
+}
+
+.email {
+	text-align: center;
+}
+
+.description {
+	text-align: center; 
+	font-weight: bold;
+	display: block;
+	font-size: 2em;
+}
+
+.note {
+	text-align: center;
+}
 
 
