@@ -14,6 +14,7 @@ end
 
 get '/contactlist' do
 	@contact_list = Contact.all
+	@sorted_list = Contact.all.order(:first_name)
 	@contact_count = @contact_list.length 
 	@title = 'contact list'
 	erb :contactlist
@@ -41,6 +42,34 @@ get '/contacts/:id' do
 	end 
 end 
 
+post '/contacts' do 
+	Contact.create({
+		first_name: params[:first_name].strip,	#using .strip to take white space out after the first name
+		last_name: 	params[:last_name].strip,
+		email:  	params[:email].strip,
+		note:  		params[:note].strip
+	})
+	@new_contact_name = params[:first_name]
+	redirect to('/new_contact_success')
+end 
+
+get '/new_contact_success' do
+	title = Contact.last
+	@title = title.full_name
+	@new_contact_name = @title
+
+	erb :new_contact_success
+end 
+
+get '/contacts/:id/edit' do 
+	@contact = Contact.find_by({id: params[:id].to_i})
+	if @contact 
+		erb :edit_contact
+	else 
+		raise Sinatra::NotFound 
+	end 
+	
+end 
 
 
 # get '/contacts'
