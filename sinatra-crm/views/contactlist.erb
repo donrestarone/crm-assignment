@@ -8,14 +8,15 @@
 	<% @sorted_list.each do |contact| %>
 	<div class="contactribbon">
 		<a class="emailcontainer"href="/contacts/<%= contact.id %>">  <%= contact.full_name%> (<%= contact.email %>)</a>
-		<div class="contactlink">
-			<a href="/contacts/<%= contact.id %>/edit">edit</a>
-			|
-		</div> 
-			<form class="deleteform" action='/contacts/<%= contact.id %>/delete' method='post'>
-	<input type="hidden" name="_method" value="delete">
-			<input class="deletebutton" type="submit" value="Delete">
-			</form>
+		<div class="actionLinks">
+			<div class="contactlink">
+				<a href="/contacts/<%= contact.id %>/edit">edit</a>
+			</div> 
+				<form class="deleteform" action='/contacts/<%= contact.id %>/delete' method='post'>
+		<input type="hidden" name="_method" value="delete">
+				<input class="deletebutton" type="submit" value="Delete">
+				</form>
+		</div>
 	</div>
 	<% end %>
 </div>

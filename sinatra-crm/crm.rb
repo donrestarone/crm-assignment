@@ -26,7 +26,6 @@ get '/about' do
 end 
 
 get '/contacts/new' do
-	p "hi"
 	@title = 'Create new Contact'
 	erb :new
 end 
@@ -43,12 +42,16 @@ get '/contacts/:id' do
 end 
 
 post '/contacts' do 
-	Contact.create({
-		first_name: params[:first_name].strip,	#using .strip to take white space out after the first name
-		last_name: 	params[:last_name].strip,
-		email:  	params[:email].strip,
-		note:  		params[:note].strip
-	})
+	#if params[:first_name] != '' && params[:last_name] != '' && params[:email] != '' && params[:note] != ''
+		Contact.create({
+			first_name: params[:first_name].strip,	#using .strip to take white space out after the first name
+			last_name: 	params[:last_name].strip,
+			email:  	params[:email].strip,
+			note:  		params[:note].strip
+		})
+	#else 
+		#p "error"
+	#end 
 	@new_contact_name = params[:first_name]
 	redirect to('/new_contact_success')
 end 

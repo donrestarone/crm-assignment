@@ -1,8 +1,12 @@
-<h3>Create a New Contact</h1>
+<h2>Create a New Contact</h2>
 <form action="/contacts" method="post">
-	<input type="text" name="first_name" placeholder="first name">
-	<input type="text" name="last_name" placeholder="last name">
-	<input type="text" name="email" placeholder="contact email">
-	<input type="text" name="note" placeholder="notes">
-	<input type="submit" name="New Contact">
+	<label>First Name</label>
+	<input type="text" name="first_name" placeholder="John">
+	<label>Last Name</label>
+	<input type="text" name="last_name" placeholder="Doe">
+	<label>Contact Email</label>
+	<input type="text" name="email" placeholder="john@doe.com">
+	<label>Message</label>
+	<input type="text" name="note" placeholder="a john doe">
+	<input class="submitButton" type="submit" name="New Contact">
 </form>	
